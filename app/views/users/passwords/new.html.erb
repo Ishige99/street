@@ -1,16 +1,19 @@
-<h2>Forgot your password?</h2>
+<h2>パスワードリセットの手順を送信します</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
+  <div class='form-text-wrap'>
+    <label class="form-text">メールアドレス</label>
+  </div>
   <div class="field">
-    <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "このアドレスに送信します" %>
   </div>
 <% end %>
 
 <%= render "users/shared/links" %>
+<%= link_to 'トップページに戻る', root_path, class: "root-page" %>
