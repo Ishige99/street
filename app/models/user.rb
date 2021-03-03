@@ -16,7 +16,7 @@ class User < ApplicationRecord
       validates :surname_kana
       validates :first_name_kana
     end
-    validates :sex_id, includion:{in: [true, false]}
+    validates :sex_id
     validates :birthday
   end
 
