@@ -1,8 +1,10 @@
 <h1>STREET</h1>
 <% if user_signed_in? %>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
   <div class="user-nickname"><%= current_user.nickname %>様</div>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
 <% else %>
   <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
   <%= link_to 'ログイン', user_session_path, class: "log-in" %>
 <% end %>
+
+<%= link_to "商品を出品する", new_clothe_path, class: "new-clothe"%>

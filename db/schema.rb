@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_032733) do
+ActiveRecord::Schema.define(version: 2021_03_04_061255) do
+
+  create_table "clothes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "text", null: false
+    t.integer "category_id", null: false
+    t.integer "size_id", null: false
+    t.integer "state_id", null: false
+    t.integer "delivery_burden_id", null: false
+    t.integer "delivery_method_id", null: false
+    t.integer "delivery_source_id", null: false
+    t.integer "delivery_day_id", null: false
+    t.integer "price", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_clothes_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "nickname", null: false
@@ -21,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_032733) do
     t.string "surname_kana", null: false
     t.string "first_name_kana", null: false
     t.integer "sex_id", null: false
-    t.string "birthday", null: false
+    t.date "birthday"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -31,4 +48,5 @@ ActiveRecord::Schema.define(version: 2021_03_01_032733) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "clothes", "users"
 end
