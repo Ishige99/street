@@ -11,7 +11,7 @@
 | surname_kana       | string  | null: false |
 | first_name_kana    | string  | null: false |
 | sex_id             | integer | null: false |
-| birthday           | string  | null: false |
+| birthday           | date    | null: false |
 ### Association
 - has_many :clothes
 - has_many :histories
