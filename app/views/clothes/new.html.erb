@@ -1,11 +1,12 @@
 <h1>商品投稿</h1>
 
-<%= form_with(model: @clothes, local: true) do |f| %>
+<%= form_with(model: @clothe, local: true) do |f| %>
 
   <div class="">
     <div class="">
       <label class="">商品画像(必須)</label>
     </div>
+    <%= f.file_field :image, class: "" %>
   </div>
 
   <div class="">
@@ -40,7 +41,7 @@
     <div class="">
       <label class="">商品の説明(必須)</label>
     </div>
-    <%= f.text_area :text, class: "", id: "clothe-text", placeholder: "商品の説明(なるべくわかりやすく)" %>
+    <%= f.text_area :text, class: "", id: "clothe-text", placeholder: "商品の説明(400文字以内)" %>
   </div>
 
   <div class="">

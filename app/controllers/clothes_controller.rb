@@ -20,12 +20,10 @@ class ClothesController < ApplicationController
   private
 
   def clothe_params
-    params.require(:clothe).permit(:name, :text, 
-                                   :category_id, :seze_id, 
-                                   :state_id, :delivery_burden_id, 
-                                   :delivery_method_id, :delivery_source_id, 
-                                   :delivery_day_id, :price, 
-                                   images: []).merge(user_id: current_user.id)
+    params.require(:clothe).permit(:name, :text, :category_id, :size_id, 
+                                   :state_id, :delivery_burden_id, :delivery_method_id, 
+                                   :delivery_source_id, :delivery_day_id, :price, :image
+                                  ).merge(user_id: current_user.id)
   end
 
 end
