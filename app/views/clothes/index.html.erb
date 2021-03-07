@@ -20,7 +20,7 @@
       <li class='clothe-list'>
 
         <div class=''>
-          <%= link_to image_tag(clothe.image, class: "clothe-img"), "#" %>
+          <%= link_to image_tag(clothe.image, class: "clothe-img"), clothe_path(clothe.id) %>
         </div>
 
         <div class=''>
@@ -29,9 +29,7 @@
           </h3>
           
           <div class=''>
-            <span><%= clothe.price %>円</span>
-            <br>
-            <%= clothe.delivery_burden.name %>
+            <span>¥<%= clothe.price %></span>
           </div>
         </div>
       </li>

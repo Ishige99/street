@@ -18,10 +18,10 @@ class Size < ActiveHash::Base
     { id: 16, name: '130　(キッズ)' },
     { id: 17, name: '140　(キッズ)' },
     { id: 18, name: '150　(キッズ)' },
-    { id: 19, name: '160　(キッズ)' }
+    { id: 19, name: '160　(キッズ)' },
+    { id: 20, name: 'フリーサイズ' }
   ]
 
   include ActiveHash::Associations
   has_many :clothes
-  
 end
