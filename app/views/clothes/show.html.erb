@@ -28,7 +28,7 @@
 <% if user_signed_in? %>
   <% if current_user.id == @clothe.user_id %>
     <%= link_to "商品編集", edit_clothe_path %>
-    <%= link_to "商品削除", "#" %>
+    <%= link_to "商品削除", clothe_path, method: :delete %>
   <% else%>
     <%= link_to "商品購入", "#" %>
   <% end %>
