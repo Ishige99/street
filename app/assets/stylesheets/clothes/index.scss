@@ -1,0 +1,19 @@
+
+.clothe-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.clothe-list {
+  list-style: none;
+  margin: 5px;
+  float: left;
+}
+
+.clothe-img {
+  width: 30vh;
+  height: 30vh;
+}

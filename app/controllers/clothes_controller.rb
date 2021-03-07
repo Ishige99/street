@@ -2,6 +2,7 @@ class ClothesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
   def index
+    @clothes = Clothe.order("created_at DESC")
   end
   
   def new
