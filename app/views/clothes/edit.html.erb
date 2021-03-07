@@ -2,6 +2,7 @@
 <%= link_to "商品詳細ページに戻る", clothe_path %>
 
 <%= form_with(model: @clothe, local: true) do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
 
   <div class="">
     <div class="">

@@ -47,9 +47,6 @@ class ClothesController < ApplicationController
   end
 
   def correct_user
-    unless @clothe.user_id == current_user.id
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless @clothe.user_id == current_user.id
   end
-
 end
