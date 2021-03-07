@@ -34,14 +34,14 @@
     <div class="">
       <label class="">商品名(必須)</label>
     </div>
-    <%= f.text_field :name, class: "", id: "clothe-name", pleceholder: "商品名" %>
+    <%= f.text_field :name, class: "", id: "clothe-name", pleceholder: "商品名", maxlength: "70" %>
   </div>
 
   <div class="">
     <div class="">
       <label class="">商品の説明(必須)</label>
     </div>
-    <%= f.text_area :text, class: "", id: "clothe-text", placeholder: "商品の説明(400文字以内)" %>
+    <%= f.text_area :text, class: "", id: "clothe-text", placeholder: "商品の説明(1000文字以内)", raws: "8", maxlenth: "1000" %>
   </div>
 
   <div class="">
