@@ -1,7 +1,7 @@
 class ClothesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit]
-  before_action :set_clothe, only: [:show, :edit, :update]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
+  before_action :set_clothe, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @clothes = Clothe.order('created_at DESC')
@@ -32,6 +32,11 @@ class ClothesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @clothe.destroy
+    redirect_to root_path
   end
 
   private
