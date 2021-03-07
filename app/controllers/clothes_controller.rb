@@ -1,5 +1,7 @@
 class ClothesController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :create, :edit]
+  before_action :set_clothe, only: [:show, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def index
     @clothes = Clothe.order('created_at DESC')
@@ -19,7 +21,17 @@ class ClothesController < ApplicationController
   end
 
   def show
-    @clothe = Clothe.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @clothe.update(clothe_params)
+      redirect_to clothe_params
+    else
+      render :edit
+    end
   end
 
   private
@@ -29,4 +41,15 @@ class ClothesController < ApplicationController
                                    :state_id, :delivery_burden_id, :delivery_method_id,
                                    :delivery_source_id, :delivery_day_id, :price, :image).merge(user_id: current_user.id)
   end
+
+  def set_clothe
+    @clothe = Clothe.find(params[:id])
+  end
+
+  def correct_user
+    unless @clothe.user_id == current_user.id
+      redirect_to action: :index
+    end
+  end
+
 end
