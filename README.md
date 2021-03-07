@@ -24,7 +24,7 @@
 | category_id        | integer    | null: false                    |
 | size_id            | integer    | null: false                    |
 | state_id           | integer    | null: false                    |
-| delivery_fee_id    | integer    | null: false                    |
+| delivery_burden_id | integer    | null: false                    |
 | delivery_method_id | integer    | null: false                    |
 | delivery_source_id | integer    | null: false                    |
 | delivery_day_id    | integer    | null: false                    |
