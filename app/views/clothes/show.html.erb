@@ -1,2 +1,35 @@
 <h1>商品詳細</h1>
+<%= link_to "トップページへ戻る", root_path %>
 
+<%= image_tag(@clothe.image, closs:"clothe-image") %><br>
+<span style="text-decoration: underline">値段</span>
+<span style="font-weight: bold;"><%= @clothe.price %>円</span><br>
+<span style="text-decoration: underline">商品名</span>
+<span style="font-weight: bold;"><%= @clothe.name %></span><br>
+<span style="text-decoration: underline">商品の説明</span>
+<span style="font-weight: bold;"><%= @clothe.text %></span><br>
+<span style="text-decoration: underline">カテゴリー</span>
+<span style="font-weight: bold;"><%= @clothe.category.name %></span><br>
+<span style="text-decoration: underline">サイズ</span>
+<span style="font-weight: bold;"><%= @clothe.size.name %></span><br>
+<span style="text-decoration: underline">商品の状態</span>
+<span style="font-weight: bold;"><%= @clothe.state.name %></span><br>
+<span style="text-decoration: underline">配送料の負担</span>
+<span style="font-weight: bold;"><%= @clothe.delivery_burden.name %></span><br>
+<span style="text-decoration: underline">配送方法</span>
+<span style="font-weight: bold;"><%= @clothe.delivery_method.name %></span><br>
+<span style="text-decoration: underline">発送元の地域</span>
+<span style="font-weight: bold;"><%= @clothe.delivery_source.name %></span><br>
+<span style="text-decoration: underline">発送までの日数</span>
+<span style="font-weight: bold;"><%= @clothe.delivery_day.name %></span><br>
+<br>
+<br>
+
+<% if user_signed_in? %>
+  <% if current_user.id == @clothe.user_id %>
+    <%= link_to "商品編集", "#" %>
+    <%= link_to "商品削除", "#" %>
+  <% else%>
+    <%= link_to "商品購入", "#" %>
+  <% end %>
+<% end %>
