@@ -18,6 +18,10 @@ class ClothesController < ApplicationController
     end
   end
 
+  def show
+    @clothe = Clothe.find(params[:id])
+  end
+
   private
 
   def clothe_params
