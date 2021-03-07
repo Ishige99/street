@@ -9,7 +9,7 @@ FactoryBot.define do
     delivery_method_id { 4 }
     delivery_source_id { 20 }
     delivery_day_id { 3 }
-    price { "10000" } 
+    price { '10000' }
 
     association :user
 
@@ -17,5 +17,4 @@ FactoryBot.define do
       clothe.image.attach(io: File.open('public/images/本.jpg'), filename: '本.jpg')
     end
   end
-
 end

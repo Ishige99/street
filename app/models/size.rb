@@ -24,5 +24,4 @@ class Size < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :clothes
-
 end
