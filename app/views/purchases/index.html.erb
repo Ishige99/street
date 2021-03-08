@@ -1,1 +1,58 @@
-<h1>kooo</h1>
+<h1>商品購入ページ</h1>
+
+
+<%= form_with(model: @purchase, url: clothe_purchases_path, local: true) do |f| %>
+
+  <div class="">
+    <div class="">
+      <label class="">郵便番号</label>
+    </div>
+    <%= f.text_field :postal_code, class:"", id:"postal-code", placeholder:"例)　123-4567", maxlength:"8" %>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label class="">都道府県</label>
+    </div>
+    <%= f.collection_select(:prefecture, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label class="">市町村区</label>
+    </div>
+    <%= f.text_field :city, class:"", id:"city", placeholder:"例）東京都品川区"%>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label class="">番地</label>
+    </div>
+    <%= f.text_field :address_1, class:"", id:"addresses", placeholder:"例）品川1-1-1" %>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label class="">建物名(任意)</label>
+    </div>
+    <%= f.text_field :address_2, class:"", id:"buildings", placeholder:"例）◯◯マンション101" %>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label class="">電話番号(ハイフンなし)</label>
+    </div>
+    <%= f.text_field :phone_number, class:"", id:"", placeholder:"09012345678"%>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label class=""></label>
+    </div>
+  </div> 
+
+  <br>
+
+  <%= f.submit "購入", class:"" %>
+  
+<% end %>
