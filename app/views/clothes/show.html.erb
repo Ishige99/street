@@ -30,6 +30,6 @@
     <%= link_to "商品編集", edit_clothe_path %>
     <%= link_to "商品削除", clothe_path, method: :delete %>
   <% else%>
-    <%= link_to "商品購入", "#" %>
+    <%= link_to "商品購入", clothe_purchases_path(@clothe.id) %>
   <% end %>
 <% end %>
