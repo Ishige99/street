@@ -1,7 +1,7 @@
 <h1>商品購入ページ</h1>
 
 
-<%= form_with(model: @purchase, url: clothe_purchases_path, local: true) do |f| %>
+<%= form_with(model: @purchase, id: 'charge-form', url: clothe_purchases_path, local: true) do |f| %>
 <%= render 'shared/error_messages', model: f.object %>
 
   <h3>カード情報入力</h3>
