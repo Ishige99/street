@@ -3,14 +3,14 @@ class PurchasesController < ApplicationController
   before_action :receive_clothe, only: [:index, :create]
 
   def index
-    @purchase = Purchase.new
+    @user_purchase = UserPurchase.new
   end
 
   def create
-    @purchase = Purchase.new(purchase_params)
-    if @purchase.valid?
+    @user_purchase = UserPurchase.new(purchase_params)
+    if @user_purchase.valid?
       pay_item
-      @purchase.save
+      @user_purchase.save
       redirect_to root_path
     else
       render :index
@@ -20,8 +20,8 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit(:postal_code, :prefecture, :city, :address_1, :address_2,
-                                     :phone_number).merge(token: params[:token])
+    params.require(:user_purchase).permit(:postal_code, :prefecture, :city, :address_1, :address_2,
+                                     :phone_number).merge(token: params[:token], clothe_id: params[:clothe_id], user_id: current_user.id)
   end
 
   def receive_clothe

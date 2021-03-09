@@ -2,6 +2,7 @@ class Clothe < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   belongs_to :user
+  has_one :history
 
   belongs_to :category
   belongs_to :size
