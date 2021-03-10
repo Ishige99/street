@@ -1,7 +1,9 @@
+<%= render "shared/second_header" %>
+
 <h1>商品購入ページ</h1>
 
 
-<%= form_with(model: @purchase, id: 'charge-form', url: clothe_purchases_path, local: true) do |f| %>
+<%= form_with(model: @user_purchase, id: 'charge-form', url: clothe_purchases_path, local: true) do |f| %>
 <%= render 'shared/error_messages', model: f.object %>
 
   <h3>カード情報入力</h3>
@@ -83,3 +85,5 @@
   <%= f.submit "購入", class:"" %>
   
 <% end %>
+<br>
+<%= link_to "商品詳細画面へ戻る", clothe_path(@clothe.id) %>

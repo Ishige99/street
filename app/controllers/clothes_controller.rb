@@ -2,6 +2,7 @@ class ClothesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
   before_action :set_clothe, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :purchased_clothe, only: [:edit, :update, :destroy]
 
   def index
     @clothes = Clothe.order('created_at DESC')
@@ -53,5 +54,11 @@ class ClothesController < ApplicationController
 
   def correct_user
     redirect_to action: :index unless @clothe.user_id == current_user.id
+  end
+
+  def purchased_clothe
+    if @clothe.history.present?
+      redirect_to action: :index
+    end 
   end
 end
