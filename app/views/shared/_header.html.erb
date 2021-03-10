@@ -1,0 +1,44 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Headers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/header.css">
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <%= link_to "STREET", root_path, class:"brand" %>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              menu
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item"><%= link_to "設定", "#" %></li>
+              <li class="nav__item"><%= link_to "検索", "#" %></li>
+              <li class="nav__item"><%= link_to "出品する", new_clothe_path %></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end">
+          <% if user_signed_in? %>
+            <div class="user-nickname"><%= current_user.nickname %>様</div>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+          <% else %>
+            <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+            <%= link_to 'ログイン', user_session_path, class: "log-in" %>
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <script src="javascript/header.js"></script>
+  
+
+</body></html>
