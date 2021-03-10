@@ -10,18 +10,25 @@
     <% @clothes.each do |clothe| %>
       <li class='clothe-list'>
 
-        <div class=''>
-          <%= link_to image_tag(clothe.image, class: "clothe-img"), clothe_path(clothe.id) %>
-        </div>
-
-        <div class=''>
-          <h3 class=''>
-            <%= clothe.name %>
-          </h3>
-          
+        <div class="msr_box01">
           <div class=''>
-            <span>¥<%= clothe.price %></span>
+            <%= link_to image_tag(clothe.image, class: "clothe-img"), clothe_path(clothe.id) %>
           </div>
+
+          <div class=''>
+            <h3 class='ttl'>
+              <%= clothe.name %>
+            </h3>
+            
+            <p class=''>
+              <% unless clothe.history.present?%>
+                <span>¥<%= clothe.price %></span>
+              <% else %>
+                <%= image_tag "/images/soldout.png" %>
+              <% end %>
+            </p>
+          </div>
+
         </div>
       </li>
     <% end %>

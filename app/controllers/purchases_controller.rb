@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :receive_clothe, only: [:index, :create]
+  before_action :listing_user, only: [:index, :create]
 
   def index
     @user_purchase = UserPurchase.new
@@ -36,4 +37,11 @@ class PurchasesController < ApplicationController
       currency: 'jpy'
     )
   end
+
+  def listing_user
+    if @clothe.user_id == current_user.id || @clothe.history.present?
+      redirect_to root_path
+    end
+  end
+
 end
