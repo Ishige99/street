@@ -1,7 +1,5 @@
 <%= render "shared/second_header" %>
 
-<h2>ユーザー新規登録</h2>
-
 <%= form_with model: @user, url: user_registration_path, class: '', local: true do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
@@ -84,6 +82,6 @@
   </div>
 
 <% end %>
-
 <%= render "users/shared/links" %>
-<%= link_to 'トップページに戻る', root_path, class: "root-page" %>
+
+
