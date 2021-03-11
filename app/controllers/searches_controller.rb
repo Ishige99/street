@@ -10,7 +10,7 @@ class SearchesController < ApplicationController
     @results = @c.result.order('created_at DESC')
   end
 
-  private 
+  private
 
   def search_product
     @c = Clothe.ransack(params[:q])
@@ -20,7 +20,6 @@ class SearchesController < ApplicationController
   end
 
   def set_clothe_column
-    @clothe_name = Clothe.select("name").distinct
+    @clothe_name = Clothe.select('name').distinct
   end
-
 end

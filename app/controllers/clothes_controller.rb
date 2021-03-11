@@ -57,8 +57,6 @@ class ClothesController < ApplicationController
   end
 
   def purchased_clothe
-    if @clothe.history.present?
-      redirect_to action: :index
-    end 
+    redirect_to action: :index if @clothe.history.present?
   end
 end

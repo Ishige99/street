@@ -22,7 +22,7 @@ class PurchasesController < ApplicationController
 
   def purchase_params
     params.require(:user_purchase).permit(:postal_code, :prefecture, :city, :address_1, :address_2,
-                                     :phone_number).merge(token: params[:token], clothe_id: params[:clothe_id], user_id: current_user.id)
+                                          :phone_number).merge(token: params[:token], clothe_id: params[:clothe_id], user_id: current_user.id)
   end
 
   def receive_clothe
@@ -39,9 +39,6 @@ class PurchasesController < ApplicationController
   end
 
   def listing_user
-    if @clothe.user_id == current_user.id || @clothe.history.present?
-      redirect_to root_path
-    end
+    redirect_to root_path if @clothe.user_id == current_user.id || @clothe.history.present?
   end
-
 end

@@ -1,5 +1,5 @@
 class UserPurchase
-  include ActiveModel::Model 
+  include ActiveModel::Model
   attr_accessor :token, :clothe_id, :user_id, :postal_code, :prefecture, :city, :address_1, :address_2, :phone_number
 
   with_options presence: true do
@@ -15,7 +15,7 @@ class UserPurchase
 
   def save
     history = History.create(clothe_id: clothe_id, user_id: user_id)
-    Purchase.create(postal_code: postal_code, prefecture: prefecture, city: city, address_1: address_1, address_2: address_2, phone_number: phone_number, history_id: history.id)
+    Purchase.create(postal_code: postal_code, prefecture: prefecture, city: city, address_1: address_1, address_2: address_2,
+                    phone_number: phone_number, history_id: history.id)
   end
-
 end
