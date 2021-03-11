@@ -1,87 +1,132 @@
-<%= render "shared/second_header" %>
+<section id="contact">
+  
+  <h1 class="section-header">SIGN UP</h1>
+  
+  <div class="contact-wrapper">
+    
+    <%= form_with model: @user, url: user_registration_path, class:"form-horizontal", local: true do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+       
+      <div class="form-group">
+        <label class="form-text">ニックネーム</label>
+        <div class="col-sm-12">
+          <%= f.text_field :nickname, class:"form-control", id:"nickname", placeholder:"サイトで使用される名前です。",  maxlength:"40", autofocus: true %>
+        </div>
+      </div>
 
-<%= form_with model: @user, url: user_registration_path, class: '', local: true do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+      <div class="form-group">
+        <label class="form-text">メールアドレス</label>
+        <div class="col-sm-12">
+          <%= f.email_field :email, class:"form-control", id:"email", placeholder:"street@example.jp" %>
+        </div>
+      </div>
 
-  <div class='form-text-wrap'>
-    <label class="form-text">ニックネーム</label>
-  </div>
-  <div class="field">
-    <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例)yamada太郎", maxlength:"40", autofocus: true %>
-  </div>
+      <div class="form-group">
+        <label class="form-text">パスワード(大文字、数字を含む6文字以上)</label><br>
+        <div class="col-sm-12">
+          <%= f.password_field :password, class:"form-control", id:"password", placeholder:"半角英数字" %>
+        </div>
+      </div>
 
-  <div class='form-text-wrap'>
-    <label class="form-text">メールアドレス</label>
-  </div>
-  <div class="field">
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"street@example.jp" %>
-  </div>
+      <div class="form-group">
+        <label class="form-text">パスワード確認</label>
+        <div class="col-sm-12">
+          <%= f.password_field :password_confirmation, class:"form-control", id:"password_confirmation", placeholder:"確認用" %>
+        </div>
+      </div>
 
-  <div class='form-text-wrap'>
-    <label class="form-text">パスワード(半角6文字以上)</label>
-  </div>
-  <div class="field">
-    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"大文字、数字を含む" %>
-  </div>
+      <div class="form-group">
+        <label class="form-text">名前(漢字)</label>
+        <div class="col-sm-12">
+            <%= f.text_field :surname, class:"form-control", id:"surname", placeholder:"姓" %>
+            <%= f.text_field :first_name, class:"form-control", id:"first-name", placeholder:"名" %>
+        </div>
+      </div>
 
-  <div class='form-text-wrap'>
-    <label class="form-text">パスワード(確認用)</label>
-  </div>
-  <div class="field">
-    <%= f.password_field :password_confirmation, class:"input-default", id:"password_confirmation", placeholder:"確認用" %>
-  </div>
+      <div class="form-group">
+        <label class="form-text">名前(カナ)</label>
+        <div class="col-sm-12">
+            <%= f.text_field :surname_kana, class:"form-control", id:"surname_kana", placeholder:"姓(カナ)" %>
+            <%= f.text_field :first_name_kana, class:"form-control", id:"first-name_kana", placeholder:"名(カナ)" %>
+        </div>
+      </div>
 
-  <div class='form-text-wrap'>
-    <label class="form-text">お名前(全角)</label>
-  </div>
-  <div class="field">
-    <%= f.text_field :surname, class:"input-name", id:"surname", placeholder:"姓" %>
-    <%= f.text_field :first_name, class:"input-name", id:"first-name", placeholder:"名" %>
-  </div>
+      <div class="form-group">
+        <label class="form-text">性別</label>
+        <div class="col-sm-12">
+              <%= f.radio_button :sex_id, :male, checked: true %>
+              <%= f.label :sex_id, "男性"%>
+              <%= f.radio_button :sex_id, :female %>
+              <%= f.label :sex_id, "女性"%>
+              <%= f.radio_button :sex_id, :other %>
+              <%= f.label :sex_id, "その他"%>
+        </div>
+      </div>
 
-  <div class='form-text-wrap'>
-    <label class="form-text">お名前カナ(全角)</label>
-  </div>
-  <div class="field">
-    <%= f.text_field :surname_kana, class:"input-name", id:"surname_kana", placeholder:"姓(カナ)" %>
-    <%= f.text_field :first_name_kana, class:"input-name", id:"first-name_kana", placeholder:"名(カナ)" %>
-  </div>
+      <div class="form-group">
+        <label class="form-text">生年月日</label>
+        <div class="col-sm-12">
+              <%= raw sprintf(
+                            f.date_select(
+                              :birthday,
+                              class:'select-birth',
+                              id:"birth-date",
+                              use_month_numbers: true,
+                              prompt:'--',
+                              start_year: 1930,
+                              end_year: (Time.now.year - 5),
+                              date_separator: '%s'),
+                            "年", "月") + "日" %>
+        </div>
+      </div>
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+        <div class="button">
+          <i class="fa fa-paper-plane"></i><span class="send-text">登録</span>
+        </div>
+      
+      </button>
+      
+    <%= link_to "トップページへ戻る", root_path, class:"back-to-root-path" %>
+    <%= link_to "ログインする", user_session_path %>
+    
+    <% end %>
+    
+    
+      <div class="direct-contact-container">
 
-  <div class='form-text-wrap'>
-    <label class="form-text">性別</label>
-  </div>
-  <div class="field">
-    <%= f.radio_button :sex_id, :male, checked: true %>
-    <%= f.label :sex_id, "男性"%>
-    <%= f.radio_button :sex_id, :female %>
-    <%= f.label :sex_id, "女性"%>
-    <%= f.radio_button :sex_id, :other %>
-    <%= f.label :sex_id, "その他"%>
-  </div>
+        <ul class="contact-list">
+          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Tokyo, Japan</span></i></li>
+          
+          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(000) 111-1111</a></span></i></li>
+          
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">street_company@street.com</a></span></i></li>
+          
+        </ul>
 
-  <div class='form-text-wrap'>
-    <label class="form-text">生年月日</label>
-  </div>
-  <div class="field">
-    <%= raw sprintf(
-                  f.date_select(
-                    :birthday,
-                    class:'select-birth',
-                    id:"birth-date",
-                    use_month_numbers: true,
-                    prompt:'--',
-                    start_year: 1930,
-                    end_year: (Time.now.year - 5),
-                    date_separator: '%s'),
-                  "年", "月") + "日" %>
-  </div>
+        <hr>
+        <ul class="social-media-list">
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-github" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-codepen" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+        <hr>
 
+        <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
 
-  <div class="actions">
-    <%= f.submit "登録" %>
+      </div>
+    
   </div>
+  
+</section> 
 
-<% end %>
-<%= render "users/shared/links" %>
 
 
