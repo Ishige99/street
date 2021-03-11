@@ -1,7 +1,10 @@
 <%= render "shared/header"%>
-<h3>検索結果</h3>
+
+<h3 class="page-title">検索結果(新着順)</h3>
 <ul class='clothe-lists'>
+
   <% if @results.length !=0 %>
+  
     <% @results.each do |result| %>
       <li class='clothe-list'>
 
@@ -15,9 +18,12 @@
               <%= result.name %>
             </h3>
             
-            <p class=''>
-              <% unless result.history.present?%>
-                <span>¥<%= result.price %></span>
+            <p class='index-money'>
+              <% unless result.history.present? %>
+                <span>¥<%= result.price.to_s(:delimited) %></span>
+                  <% if result.delivery_burden_id == 2 %>
+                    <span>(送料購入者負担)</span>
+                  <% end %>
               <% else %>
                 <%= image_tag "/images/soldout.png" %>
               <% end %>
