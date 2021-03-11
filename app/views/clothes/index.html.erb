@@ -1,9 +1,4 @@
 <%= render "shared/header"%>
-
-<br>
-<br>
-<br>
-
 <h3 class="page-title">投稿商品一覧</h3>
 
 <ul class='clothe-lists'>
@@ -21,9 +16,12 @@
               <%= clothe.name %>
             </h3>
             
-            <p class=''>
-              <% unless clothe.history.present?%>
-                <span>¥<%= clothe.price %></span>
+            <p class='index-money'>
+              <% unless clothe.history.present? %>
+                <span>¥<%= clothe.price.to_s(:delimited) %></span>
+                  <% if clothe.delivery_burden_id == 2 %>
+                    <span>(送料購入者負担)</span>
+                  <% end %>
               <% else %>
                 <%= image_tag "/images/soldout.png" %>
               <% end %>
