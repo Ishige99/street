@@ -1,0 +1,33 @@
+<%= render "shared/header"%>
+<h3>検索結果</h3>
+<ul class='clothe-lists'>
+  <% if @results.length !=0 %>
+    <% @results.each do |result| %>
+      <li class='clothe-list'>
+
+        <div class="msr_box01">
+          <div class=''>
+            <%= link_to image_tag(result.image, class: "clothe-img"), clothe_path(result.id) %>
+          </div>
+
+          <div class=''>
+            <h3 class='ttl'>
+              <%= result.name %>
+            </h3>
+            
+            <p class=''>
+              <% unless result.history.present?%>
+                <span>¥<%= result.price %></span>
+              <% else %>
+                <%= image_tag "/images/soldout.png" %>
+              <% end %>
+            </p>
+          </div>
+
+        </div>
+      </li>
+    <% end %>
+  <% else %>
+    <p>※商品が存在しません※</p>
+  <% end %>
+</ul>
