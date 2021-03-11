@@ -1,0 +1,18 @@
+.purchase-clothe-page {
+  text-align: center;
+  background-color: #FFFFDD;
+  font-family: 'TsukuARdGothic-Regular',serif;
+  padding-bottom: 40px;
+}
+
+.purchase-clothe-title {
+  padding: 20px 0;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.purchase-form-cohesive {
+  font-size: 19px;
+  font-weight: bold;
+  padding: 10px 0;
+}

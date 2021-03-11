@@ -1,7 +1,6 @@
 <%= render "shared/second_header" %>
 <div class="syouhinhensyuu">
   <h1 class="syouhinhensyuu-title">商品編集</h1>
-  <%= link_to "商品詳細ページに戻る", clothe_path %>
 
   <%= form_with(model: @clothe, local: true) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
@@ -87,4 +86,7 @@
     <%= f.submit "変更", class:"clothe-submit" %>
 
   <% end %>
+  <br>
+<%= link_to "商品詳細ページに戻る", clothe_path %>
 </div>
+<%= render "shared/footer" %>
