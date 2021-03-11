@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :clothes do
     resources :purchases, only: [:index, :create]
   end
+  resources :searches, only: [:index]
 end
