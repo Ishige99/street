@@ -6,6 +6,8 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
      const imageElement = document.createElement('div');
 
      const blobImage = document.createElement('img');
+     blobImage.classList.add('post-clothe-image');
+
      blobImage.setAttribute('src', blob);
 
      imageElement.appendChild(blobImage);
@@ -13,9 +15,6 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
     };
 
     document.getElementById('clothe_image').addEventListener('change', function(e){
-      var targetImg = document.getElementById('clothe-image');
-      targetImg.width = 20;
-      targetImg.height = 20;
 
       const imageContent = document.querySelector('img');
       if (imageContent){
