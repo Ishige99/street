@@ -1,0 +1,48 @@
+<%= render "shared/second_header" %>
+
+<h1 class="user-details-page-title">登録情報</h1>
+
+<div class="user-details">
+  <table class="detail-table">
+    <tr>
+      <th>ニックネーム</th>
+      <td style="font-weight: bold;"><%= @user.nickname %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td style="font-weight: bold;"><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th>お名前(全角)</th>
+      <td style="font-weight: bold;"><%= @user.surname %> <%= @user.first_name%></td>
+    </tr>
+    <tr>
+      <th>お名前(カナ)</th>
+      <td style="font-weight: bold;"><%= @user.surname_kana %> <%= @user.first_name_kana%></td>
+    </tr>
+    <tr>
+      <th>性別</th>
+      <td style="font-weight: bold;">
+      <% if @user.sex_id == 0 %>
+        <span>男性</span>
+      <% else %>
+        <% if @user.sex_id == 1 %>
+          <span>女性</span>
+        <% else %>
+          <span>その他</span>
+        <% end %>
+      <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>生年月日</th>
+      <td style="font-weight: bold;"><%= @user.birthday %></td>
+    </tr>
+    <tr>
+  </table>
+</div>
+<div class="user-change-btn-area">
+  <%= link_to "登録情報編集", edit_user_registration_path, class:"btn-square-user-information-change" %>
+</div>
+
+<%= render "shared/footer" %>

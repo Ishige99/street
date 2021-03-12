@@ -1,43 +1,100 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= render "shared/second_header" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+<h1 class="user-details-page-title">登録情報編集</h1>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="user-information-edit-form">
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+    <div class="field-edit">
+      <label class="">ニックネーム</label><br />
+      <%= f.text_field :nickname %>
+    </div>
+
+
+    <div class="field-edit">
+      <label class="">メールアドレス</label><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field-edit">
+      <label class="">新規パスワード</label><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+    <div class="field-edit">
+      <label class="">新規パスワード(確認用)</label><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+    <div class="field-edit">
+      <label class="">旧パスワード(変更するには入力が必要です)</label><br />
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    </div>
 
-<h3>Cancel my account</h3>
+    <div class="field-edit">
+      <label class="">名前(漢字)</label>
+      <div class="">
+          <%= f.text_field :surname, placeholder:"姓" %>
+          <%= f.text_field :first_name, placeholder:"名" %>
+      </div>
+    </div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <div class="field-edit">
+      <label class="">名前(カナ)</label>
+      <div class="">
+          <%= f.text_field :surname_kana, placeholder:"姓(カナ)" %>
+          <%= f.text_field :first_name_kana, placeholder:"名(カナ)" %>
+      </div>
+    </div>
 
-<%= link_to "Back", :back %>
+    <div class="field-edit">
+      <label class="">性別</label>
+      <div class="">
+            <%= f.radio_button :sex_id, :male, checked: true %>
+            <%= f.label :sex_id, "男性"%>
+            <%= f.radio_button :sex_id, :female %>
+            <%= f.label :sex_id, "女性"%>
+            <%= f.radio_button :sex_id, :other %>
+            <%= f.label :sex_id, "その他"%>
+      </div>
+    </div>
+
+    <div class="field-edit">
+      <label class="">生年月日</label>
+      <div class="">
+            <%= raw sprintf(
+                          f.date_select(
+                            :birthday,
+                            class:'select-birth',
+                            id:"birth-date",
+                            use_month_numbers: true,
+                            prompt:'--',
+                            start_year: 1930,
+                            end_year: (Time.now.year - 5),
+                            date_separator: '%s'),
+                          "年", "月") + "日" %>
+      </div>
+    </div>
+    <br>
+
+    <div class="actions">
+      <%= f.submit "更新", class:"btn-square-user-information-change" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="user-delete-btn">
+  <%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn-square-user-information-delete" %></p>
+</div>
+
+<div class="back-to-user-information">
+  <%= link_to "ユーザー情報ページへ戻る", :back, class:"btn btn--orange btn--radius" %>
+</div>
+
+<%= render "shared/footer" %>
