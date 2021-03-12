@@ -10,6 +10,7 @@
         <label class="">商品画像(必須)</label>
       </div>
       <%= f.file_field :image, class: "" %>
+      <div id="image-list"></div>
     </div>
 
     <div class="">
@@ -83,10 +84,10 @@
     </div>
 
     <br>
-    <%= f.submit "変更", class:"clothe-submit" %>
+    <%= f.submit "変更", class:"btn-square-so-pop" %>
 
   <% end %>
   <br>
-<%= link_to "商品詳細ページに戻る", clothe_path %>
+<%= link_to "商品詳細ページに戻る", clothe_path, class:"btn btn--orange btn--radius" %>
 </div>
 <%= render "shared/footer" %>

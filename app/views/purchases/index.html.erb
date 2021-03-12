@@ -83,11 +83,11 @@
 
     <br>
 
-    <%= f.submit "購入", class:"" %>
+    <%= f.submit "購入", class:"btn-square-so-pop" %>
     
   <% end %>
   <br>
-  <%= link_to "商品詳細画面へ戻る", clothe_path(@clothe.id) %>
+  <%= link_to "商品詳細画面へ戻る", clothe_path(@clothe.id), class:"btn btn--orange btn--radius" %>
 </div>
 
 <%= render "shared/footer" %>

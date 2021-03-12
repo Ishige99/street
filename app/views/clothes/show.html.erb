@@ -41,10 +41,10 @@
 <% if user_signed_in? %>
   <% unless @clothe.history.present? %>
     <% if current_user.id == @clothe.user_id %>
-      <%= link_to "商品編集", edit_clothe_path, class:"btn btn--orange btn--radius" %>
-      <%= link_to "商品削除", clothe_path, method: :delete, class:"btn btn--orange btn--radius" %>
+      <%= link_to "商品編集", edit_clothe_path, class:"btn-square-so-pop" %>
+      <%= link_to "商品削除", clothe_path, method: :delete, class:"btn-square-so-pop" %>
     <% else%>
-      <%= link_to "商品購入", clothe_purchases_path(@clothe.id), class:"btn btn--orange btn--radius" %>
+      <%= link_to "商品購入", clothe_purchases_path(@clothe.id), class:"btn-square-so-pop" %>
     <% end %>
   <% end %>
 <% end %>
