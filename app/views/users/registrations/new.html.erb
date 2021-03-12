@@ -87,8 +87,12 @@
       
       </button>
       
-    <%= link_to "トップページへ戻る", root_path, class:"back-to-root-path" %>
-    <%= link_to "ログインする", user_session_path %>
+      <div class="login-btn-zone">
+        <%= link_to "トップページへ戻る", root_path, class:"btn-flat-border" %><br>
+      </div>
+      <div class="login-btn-zone">
+        <%= link_to "ログインする", user_session_path, class:"btn-flat-border" %>
+      </div>
     
     <% end %>
     
