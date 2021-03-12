@@ -258,3 +258,43 @@ hr {
 .back-to-root-path {
   margin: 3px 0 0 0;
 }
+
+.user-information-edit-form {
+  padding-top: 35px;
+  font-family: 'TsukuARdGothic-Regular',serif;
+  text-align: center;
+  background-color: #FFFFDD;
+}
+
+.field-edit {
+  padding-bottom: 5px;
+}
+
+.user-delete-btn {
+  padding-top: 20px;
+  text-align: center;
+  background-color: #FFFFDD;
+}
+
+.back-to-user-information {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: #FFFFDD;
+}
+
+.btn-square-user-information-delete {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #fd9535;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00;/*線色*/
+  width: 120px;
+  text-align: center;
+  margin: 0 auto;
+}

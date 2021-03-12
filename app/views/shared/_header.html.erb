@@ -24,7 +24,7 @@
         </div>
         <div class="site-header__end">
           <% if user_signed_in? %>
-            <div class="change-string"><%= current_user.nickname %>様</div>
+            <div class="change-string"><%= link_to "#{current_user.nickname}様", users_show_path %></div>
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "change-string" %>
           <% else %>
             <%= link_to '新規登録', new_user_registration_path, class: "change-string" %>
