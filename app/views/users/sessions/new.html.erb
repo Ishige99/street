@@ -1,34 +1,54 @@
-<%= render "shared/second_header" %>
+<section id="contact">
+  
+  <h1 class="section-header">LOG IN</h1>
+  
+  <div class="contact-wrapper">
+    
+    <%= form_for resource, as: resource_name, url: session_path(resource_name), class:"form-horizontal" do |f| %>
+       
+      <div class="form-group">
+        <label class="form-text">メールアドレス</label>
+        <div class="col-sm-12">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        </div>
+      </div>
 
-<h2>ログインページ</h2>
+      <div class="form-group">
+        <label class="form-text">パスワード(大文字、数字を含む6文字以上)</label><br>
+        <div class="col-sm-12">
+          <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+        </div>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-  <div class='form-text-wrap'>
-    <label class="form-text">メールアドレス</label>
+      <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :入力内容を記憶する %>
+          </div>
+      <% end %>
+      
+      </div>
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+        <div class="button">
+          <i class="fa fa-paper-plane"></i><span class="send-text">ログイン</span>
+        </div>
+      
+      </button>
+    <br>
+    <%= link_to "トップページへ戻る", root_path, class:"back-to-root-path" %><br>
+    <%= link_to "ユーザー新規登録", new_user_registration_path %><br>
+    <%= link_to "パスワードを忘れてしまった場合", new_password_path(resource_name) %><br>
+    
+    <% end %>
+    
+    
+    
   </div>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  
+</section> 
 
-  <div class='form-text-wrap'>
-    <label class="form-text">パスワード</label>
-  </div>
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :入力内容を記憶する %>
-    </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-  </div>
-<% end %>
 
 <%= link_to "パスワードを忘れてしまった場合", new_password_path(resource_name) %><br />
 <%= render "users/shared/links" %>

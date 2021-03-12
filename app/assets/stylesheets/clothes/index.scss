@@ -4,7 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
+  background-color: #FFFFDD;
+  padding-bottom: 50px;
 }
 
 .clothe-list {
@@ -47,4 +48,24 @@
 }
 .msr_box01 a:hover{
   opacity: 0.8;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'TsukuARdGothic-Regular',serif;
+  background-color: #FFFFDD; 
+  text-align: center;
+  padding: 20px 0;
+}
+
+.ttl {
+  text-align: center;
+  font-family: 'TsukuARdGothic-Regular',serif;
+  font-weight: 800;
+}
+
+.index-money {
+  text-align: center;
+  font-family: 'TsukuARdGothic-Regular',serif;
 }

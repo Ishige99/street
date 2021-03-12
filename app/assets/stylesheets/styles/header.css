@@ -3,8 +3,8 @@
 ** Tweak as per your needs **
 */
 .brand {
-  font-weight: bold;
-  font-size: 20px; }
+  font-size: 50px;
+  font-family: 'Phosphate',sans-serif; }
 
 .site-header {
   position: relative;
@@ -66,7 +66,8 @@
 
 .nav__item a {
   display: block;
-  padding: 1.5rem 1rem; }
+  padding: 1.5rem 1rem;
+  font-family: 'TsukuARdGothic-Regular',serif; }
   @media (min-width: 660px) {
     .nav__item a {
       padding-left: 0;
@@ -79,3 +80,9 @@
       position: absolute;
       right: 1rem;
       top: 1rem; } }
+
+
+.change-string {
+  font-family: 'TsukuARdGothic-Regular',serif;
+  margin: 0 5px;
+}

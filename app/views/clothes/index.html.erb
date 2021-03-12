@@ -1,10 +1,6 @@
 <%= render "shared/header"%>
+<h3 class="page-title">投稿商品一覧(新着順)</h3>
 
-<br>
-<br>
-<br>
-
-<h3>投稿商品一覧</h3>
 <ul class='clothe-lists'>
   <% if @clothes.present? %>
     <% @clothes.each do |clothe| %>
@@ -20,9 +16,9 @@
               <%= clothe.name %>
             </h3>
             
-            <p class=''>
-              <% unless clothe.history.present?%>
-                <span>¥<%= clothe.price %></span>
+            <p class='index-money'>
+              <% unless clothe.history.present? %>
+                <span>¥<%= clothe.price.to_s(:delimited) %></span>
               <% else %>
                 <%= image_tag "/images/soldout.png" %>
               <% end %>
@@ -36,3 +32,5 @@
     <p>※商品が存在しません※</p>
   <% end %>
 </ul>
+
+<%= render "shared/footer" %>

@@ -15,9 +15,6 @@
         </div>
         <div class="site-header__middle">
           <nav class="nav">
-            <button class="nav__toggle" aria-expanded="false" type="button">
-              menu
-            </button>
             <ul class="nav__wrapper">
               <li class="nav__item"><%= link_to "設定", "#" %></li>
               <li class="nav__item"><%= link_to "商品検索", searches_path %></li>
@@ -27,11 +24,11 @@
         </div>
         <div class="site-header__end">
           <% if user_signed_in? %>
-            <div class="user-nickname"><%= current_user.nickname %>様</div>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+            <div class="change-string"><%= current_user.nickname %>様</div>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "change-string" %>
           <% else %>
-            <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
-            <%= link_to 'ログイン', user_session_path, class: "log-in" %>
+            <%= link_to '新規登録', new_user_registration_path, class: "change-string" %>
+            <%= link_to 'ログイン', user_session_path, class: "change-string" %>
           <% end %>
         </div>
       </div>
