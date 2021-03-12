@@ -20,7 +20,8 @@ body {
   font: 300 60px 'Oswald', sans-serif;
   letter-spacing: 6px;
   color: #000;
-  font-family: 'TsukuARdGothic-Regular',serif;
+  font-size: 100px;
+  font-family: 'Phosphate',sans-serif;
 }
 
 .contact-wrapper {
