@@ -3,7 +3,7 @@ class Clothe < ApplicationRecord
 
   belongs_to :user
   has_one :history
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   belongs_to :category
   belongs_to :size
