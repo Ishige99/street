@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.create(comment_params)
-    if @comment.valid?
-      @comment.save
+    comment = Comment.create(comment_params)
+    if comment.valid?
+      comment.save
     end
     redirect_to "/clothes/#{comment.clothe.id}"
   end

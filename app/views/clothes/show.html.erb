@@ -74,6 +74,22 @@
       <% end %>
     <% end %>
   </div>
+
+  <div class="comment-form-box">
+
+    <div class="">
+      <% if user_signed_in? %>
+        <%= form_with(model: [@clothe, @comment], local: true) do |f| %>
+          <%= f.text_area :text, class:"comment-text-box" %><br><br>
+          <%= f.submit "コメント投稿", class:"btn-flat-border" %>
+        <% end %>
+      <% end%>
+    </div>
+
+    <div class="">
+    </div>
+  </div>
+
 </div>
 
 <%= render "shared/footer" %>

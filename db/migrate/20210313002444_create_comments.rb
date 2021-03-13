@@ -3,7 +3,8 @@ class CreateComments < ActiveRecord::Migration[6.0]
     create_table :comments do |t|
       t.text :text,        null: false
       t.references :user,  foreign_key: true
-      t.integer :tweet_id, foreign_key: true
+      t.integer :tweet_id, foreign_key: true  #<= 消去して下記に変更
+      # t.references :clothe, foreign_key: true
       t.timestamps
     end
   end
