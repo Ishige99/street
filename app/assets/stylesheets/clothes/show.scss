@@ -70,3 +70,45 @@ table tr:nth-child(odd){
   margin: 10px 0 0 0;
 }
 
+.comment-form-box {
+  text-align: center;
+  padding-top: 60px;
+}
+
+.comment-text-box {
+  width: 350px;
+  height: 80px;
+}
+
+.all-comment-output-box {
+  padding-top: 10px;
+}
+
+.comment-output-box {
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comentoitiran {
+  padding-top: 20px;
+  font-family: 'TsukuARdGothic-Regular',serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.comment-box {
+  width: 300px;
+  border: dotted 1px #f56500;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment-post-time {
+  font-size: 4px;
+}
+

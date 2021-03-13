@@ -74,6 +74,33 @@
       <% end %>
     <% end %>
   </div>
+
+  <div class="comment-form-box">
+
+    <div class="">
+      <% if user_signed_in? %>
+        <%= form_with(model: [@clothe, @comment], local: true) do |f| %>
+          <%= f.text_area :text, class:"comment-text-box" %><br><br>
+          <%= f.submit "コメント投稿", class:"btn-flat-border" %>
+        <% end %>
+      <% end%>
+    </div>
+    
+    <h1 class="comentoitiran">＜コメント一覧＞</h1>
+
+    <div class="all-comment-output-box">
+      <div class="comment-output-box">
+        <% @comments.reverse.each do |c| %>
+          <p class="comment-box">
+            <span class="comment-user-name"><strong><%= c.user.nickname %></strong></span>
+            <span class="comment-post-time"><%= c.created_at.strftime('%Y/%m/%d %H:%M')%></span><br><br>
+            <span class="comment-text"><%= c.text %></span><br>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <%= render "shared/footer" %>

@@ -15,6 +15,7 @@
 ### Association
 - has_many :clothes
 - has_many :histories
+- has_many :comments
 
 ## clothes テーブル
 | Column             | Type       | Options                        |
@@ -33,6 +34,7 @@
 ### Association
 - belongs_to :user
 - has_one :history
+- has_many :comments
 
 ## histories テーブル
 | Column | Type       | Options                        |
@@ -56,3 +58,13 @@
 | history      | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :history
+
+## comments テーブル
+| Column | Type       | Options                        |
+| ------ |----------- | ------------------------------ |
+| text   | text       | null: false                    |
+| user   | references | null: false, foreign_key: true |
+| clothe | references | null: false, foreign_key: true |
+### Association
+- belongs_to :user
+- belongs_to :clothe

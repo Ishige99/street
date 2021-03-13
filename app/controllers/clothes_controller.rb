@@ -22,6 +22,8 @@ class ClothesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @clothe.comments.includes(:user) 
   end
 
   def edit
