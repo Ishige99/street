@@ -36,7 +36,7 @@
       </div>
 
       <div class="form-group">
-        <label class="form-text">名前(漢字)</label>
+        <label class="form-text">名前(全角)</label>
         <div class="col-sm-12">
             <%= f.text_field :surname, class:"form-control", id:"surname", placeholder:"姓" %>
             <%= f.text_field :first_name, class:"form-control", id:"first-name", placeholder:"名" %>
@@ -44,7 +44,7 @@
       </div>
 
       <div class="form-group">
-        <label class="form-text">名前(カナ)</label>
+        <label class="form-text">名前(全角カナ)</label>
         <div class="col-sm-12">
             <%= f.text_field :surname_kana, class:"form-control", id:"surname_kana", placeholder:"姓(カナ)" %>
             <%= f.text_field :first_name_kana, class:"form-control", id:"first-name_kana", placeholder:"名(カナ)" %>
@@ -54,7 +54,7 @@
       <div class="form-group">
         <label class="form-text">性別</label>
         <div class="col-sm-12">
-              <%= f.radio_button :sex_id, :male, checked: true %>
+              <%= f.radio_button :sex_id, :male %>
               <%= f.label :sex_id, "男性"%>
               <%= f.radio_button :sex_id, :female %>
               <%= f.label :sex_id, "女性"%>
