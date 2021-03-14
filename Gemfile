@@ -70,3 +70,5 @@ gem 'pry-rails'
 gem 'payjp'
 
 gem 'ransack'
+
+gem 'rails-i18n'

@@ -18,7 +18,7 @@ class Clothe < ApplicationRecord
     validates :image
     validates :name
     validates :text
-    with_options numericality: { other_than: 1 } do
+    with_options numericality: { other_than: 1, message: "を入力してください" } do
       validates :category_id
       validates :size_id
       validates :state_id

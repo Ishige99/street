@@ -257,3 +257,7 @@ hr {
 .back-to-root-path {
   margin: 3px 0 0 0;
 }
+
+.login-flash-message {
+  text-align: center;
+}
