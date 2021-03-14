@@ -23,10 +23,10 @@
     <tr>
       <th>性別</th>
       <td style="font-weight: bold;">
-      <% if @user.sex_id == 0 %>
+      <% if @user.sex_id == "male" %>
         <span>男性</span>
       <% else %>
-        <% if @user.sex_id == 1 %>
+        <% if @user.sex_id == "female" %>
           <span>女性</span>
         <% else %>
           <span>その他</span>

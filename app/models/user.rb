@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :hisotries
   has_many :comments
 
+  enum sex_id: { male: 0, female: 1, other: 2 }
+
   with_options presence: true do
     validates :nickname
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)\w{6,12}\z/ }, length: { minimum: 6 }
