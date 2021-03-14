@@ -10,7 +10,7 @@ FactoryBot.define do
     first_name { gimei.first.kanji }
     surname_kana { gimei.last.katakana }
     first_name_kana { gimei.first.katakana }
-    sex_id { '2' }
+    sex_id { 'female' }
     birthday { Faker::Date.birthday(min_age: 18, max_age: 75) }
   end
 end
