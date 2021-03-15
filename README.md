@@ -1,7 +1,13 @@
-# :shirt: STREET
+# :shirt:STREET
 ### 服に特化したフリマアプリケーション
 <img width="1437" alt="7e8b6cd9fc1f2c83d4a1eee5f0e7d624" src="https://user-images.githubusercontent.com/75163604/111097015-0fab6480-8584-11eb-8318-a8380b29db69.png">
 
+# :file_folder:概要
+### 気軽に服を出品でき、購入することができる
+ジャンルやサイズ、品質などの状態から検索することができ、様々な人のニーズに合うようにしました。また、商品についても編集や削除、コメントを残すことができるようにしているのでより柔軟な商品出品ができます。
+
+# :globe_with_meridians:App URL
+https://street-app.herokuapp.com/
 
 
 
