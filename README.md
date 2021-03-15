@@ -1,6 +1,6 @@
 # :shirt: STREET
 ### 服に特化したフリマアプリケーション
-https://gyazo.com/7e8b6cd9fc1f2c83d4a1eee5f0e7d624
+<img width="1437" alt="7e8b6cd9fc1f2c83d4a1eee5f0e7d624" src="https://user-images.githubusercontent.com/75163604/111097015-0fab6480-8584-11eb-8318-a8380b29db69.png">
 
 
 
