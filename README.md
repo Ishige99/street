@@ -16,7 +16,7 @@ https://street-app.herokuapp.com/
 #### `一覧画面へ遷移する`  
 #### `商品出品は左上にある「出品」の文字をクリック`  
 #### `商品出品後は一覧画面へ戻る`  
-https://user-images.githubusercontent.com/75163604/111260017-6b005400-8663-11eb-8b1c-0ea9e2a7d4f7.mp4  
+https://user-images.githubusercontent.com/75163604/111260542-5bcdd600-8664-11eb-8151-9665c43ee178.mp4 
 https://user-images.githubusercontent.com/75163604/111260053-7ce1f700-8663-11eb-9a26-5cea405e41de.mp4  
 
 #### `一覧画面から１つの商品を選択 → 商品詳細画面へ遷移する`  
