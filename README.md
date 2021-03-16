@@ -18,27 +18,32 @@ https://street-app.herokuapp.com/
 #### `商品出品後は一覧画面へ戻る`  
 ![99948f1b61d55d9b02017c91d17b4d18](https://user-images.githubusercontent.com/75163604/111260759-bff09a00-8664-11eb-8d5a-41c20258fc84.gif)
 
-https://user-images.githubusercontent.com/75163604/111260053-7ce1f700-8663-11eb-9a26-5cea405e41de.mp4  
+![291a5c46ea17f60f77f6c71196a0be60](https://user-images.githubusercontent.com/75163604/111262486-aef55800-8667-11eb-8944-c5ed4250c0db.gif)   
 
 #### `一覧画面から１つの商品を選択 → 商品詳細画面へ遷移する`  
 #### `出品者本人であれば商品を編集・削除できる`  
-https://user-images.githubusercontent.com/75163604/111260095-8d926d00-8663-11eb-8f1e-55a6b5b4fdc2.mp4
-  
+![36c1893df5539d2c4b38e0cfe88dcd3c](https://user-images.githubusercontent.com/75163604/111262537-bddc0a80-8667-11eb-87d7-8afe568153b6.gif)  
 
 #### `ログインしているユーザーであれば商品詳細画面からコメントができる`  
 #### `(コメントは購入者と出品者がコミュニケーションをとるため)`  
-
+![d80ed4a009f42b9a808cdafef80f29f4](https://user-images.githubusercontent.com/75163604/111262565-c9c7cc80-8667-11eb-9a86-664e7ea0a0c0.gif)  
 
 #### `ログインしているユーザーであれば商品を購入できる`  
 #### `購入後は一覧画面へ戻る`  
-
+![77c129494ffce6fbbc53b19032728aa7](https://user-images.githubusercontent.com/75163604/111262586-d4826180-8667-11eb-9364-348ab23b9227.gif)  
+![7340615823acc0bde13b5488bcf72c0f](https://user-images.githubusercontent.com/75163604/111262605-dcda9c80-8667-11eb-8665-c24b8f26f8bb.gif)  
 
 #### `一覧画面の左上の「検索」をクリック → 商品検索ページへ遷移`  
 #### `ジャンルを選んで検索することができる`  
-
+![7c88325e2164ea4653c56cfe3621205f](https://user-images.githubusercontent.com/75163604/111262626-e401aa80-8667-11eb-8066-dfe5e20932a2.gif)  
+![4bd37050e28cc1ce6f3b0bcff1336a80](https://user-images.githubusercontent.com/75163604/111262647-efed6c80-8667-11eb-811b-0232cf9ceb7b.gif)  
 
 #### `一覧画面の右上の「自身のユーザー名」をクリック → 自身のユーザー情報が確認できる`  
+![0d8b1509f8e155838014ee53b96f7e8e](https://user-images.githubusercontent.com/75163604/111262665-f8de3e00-8667-11eb-867b-67819ca92ac7.gif)  
+
 #### `ユーザー情報を編集することができる`  
+![2996c89687459308da14280e2b3b7501](https://user-images.githubusercontent.com/75163604/111262683-01cf0f80-8668-11eb-8695-b62d4cf152b2.gif)  
+![a97a0ac2bda82add4e045d0d8ebd5a36](https://user-images.githubusercontent.com/75163604/111262708-098eb400-8668-11eb-9c7a-a7fa1d0570f1.gif)
 
 
 #### `トップページからログアウト`  
