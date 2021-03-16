@@ -16,12 +16,13 @@ https://street-app.herokuapp.com/
 #### `一覧画面へ遷移する`  
 #### `商品出品は左上にある「出品」の文字をクリック`  
 #### `商品出品後は一覧画面へ戻る`  
-![demo]https://gyazo.com/99948f1b61d55d9b02017c91d17b4d18
-![demo]https://gyazo.com/4de6d75d6ecb8cdfbd7f0c276af9a268
+https://user-images.githubusercontent.com/75163604/111260017-6b005400-8663-11eb-8b1c-0ea9e2a7d4f7.mp4  
+https://user-images.githubusercontent.com/75163604/111260053-7ce1f700-8663-11eb-9a26-5cea405e41de.mp4  
 
 #### `一覧画面から１つの商品を選択 → 商品詳細画面へ遷移する`  
 #### `出品者本人であれば商品を編集・削除できる`  
-
+https://user-images.githubusercontent.com/75163604/111260095-8d926d00-8663-11eb-8f1e-55a6b5b4fdc2.mp4
+  
 
 #### `ログインしているユーザーであれば商品詳細画面からコメントができる`  
 #### `(コメントは購入者と出品者がコミュニケーションをとるため)`  
